@@ -10,4 +10,4 @@ Scenario: VReading vehicle data from Excelsheet file and inputing data into a we
      Given User has access to "csv" files from "HomeOfficeTest" directory
      When  User opens the webpage "https://www.gov.uk/get-vehicle-information-from-dvla"
       And  User hit the startnow button       
-     Then  User veriy vehicle details with excel data on the vehicle details page
+     Then  User veriy vehicle details with csv data on the vehicle details page

@@ -67,4 +67,16 @@ public class VerifyVehicleDetailsStepDefintion {
         }
 	}
 	
+	@Then("^User veriy vehicle details with csv data on the vehicle details page$")
+	public void user_veriy_vehicle_details_with_csv_data_on_the_vehicle_details_page() throws Throwable {
+		vehicleCheckPage = new VehicleCheckPage(driver);
+        vehicleDetailsPage = new VehicleDetailsPage(driver);
+        for (String[] vehcileInfo : vehicleList) {
+        	vehicleCheckPage.enterRegNumber(vehcileInfo[0]);
+        	vehicleCheckPage.clickContinue();
+            vehicleDetailsPage.validate(vehcileInfo[1], vehcileInfo[2]);
+            vehicleDetailsPage.searchAgain();
+        }
+	}
+	
 }
